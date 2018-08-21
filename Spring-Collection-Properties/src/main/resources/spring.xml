@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+		http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<bean id="student" class="com.model.Student">
+		<property name="id" value="1"></property>
+		<property name="name" value="Ashwin"></property>
+		<property name="mark" value="450"></property>
+			
+		<property name="subjectProps">
+			<props>
+				<prop key="301">JAVA</prop>
+				<prop key="456">Python</prop>
+				<prop key="748">Angular</prop>
+			</props>
+		</property>
+	</bean>
+</beans>

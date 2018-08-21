@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE beans PUBLIC 
+	"-//SPRING//DTD BEAN 2.0//EN" 
+	"http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+
+<beans>
+	<bean id="company" class="com.model.Company" scope="singleton">
+		<property name="companyName" value="Infosys" />
+		<lookup-method name="getObjectEmployee" bean="employee" />
+	</bean>
+
+	<bean id="employee" class="com.model.Employee" scope="prototype">
+		<property name="emp_id" value="1"></property>
+		<property name="emp_name" value="Ashwin"></property>
+		<property name="emp_salary" value="35000.540"></property>
+	</bean>
+</beans>
+
+<!-- lookup method create proxy Employee class which extend class Company 
+	and override abstract method and return Employee class object. This lookup 
+	method used to inject multiple prototype object for singleton object -->

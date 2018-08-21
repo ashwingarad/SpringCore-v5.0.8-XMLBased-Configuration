@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+		http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<bean id="student" class="com.model.Student">
+		<property name="id" value="1"></property>
+		<property name="name" value="Ashwin"></property>
+		<property name="mark" value="450"></property>
+
+		<property name="subjectSet">
+			<set merge="true">
+				<ref bean="sub1" />
+				<ref bean="sub2" />
+				<ref bean="sub3" />
+			</set>
+		</property>
+	</bean>
+
+	<bean id="sub1" class="com.model.Subject">
+		<property name="subCode" value="C301"></property>
+		<property name="subName" value="JAVA"></property>
+	</bean>
+
+	<bean id="sub2" class="com.model.Subject">
+		<property name="subCode" value="L478"></property>
+		<property name="subName" value="Python"></property>
+	</bean>
+
+	<bean id="sub3" class="com.model.Subject">
+		<property name="subCode" value="A405"></property>
+		<property name="subName" value="Angular"></property>
+	</bean>
+</beans>
