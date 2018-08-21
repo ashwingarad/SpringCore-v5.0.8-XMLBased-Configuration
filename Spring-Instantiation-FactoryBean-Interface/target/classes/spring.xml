@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<bean id="person" class="com.model.Person">
+		<property name="pname" value="M.S.Dhoni" />
+	</bean>
+
+	<bean id="student" class="com.model.Student">
+		<property name="sname" value="XYZ" />
+	</bean>
+
+</beans>
+
+<!-- factory bean is used to create instance by the user. factory bean parameter 
+	can be static or non-static method name. It is the best way to define prototype 
+	object. When there is no static method and still you want to create the object 
+	using non static method. -->
+
+<!-- When looking up an object (such as a data source) from JNDI, you can 
+	use JndiObjectFactoryBean. When using classic Spring AOP to create a proxy 
+	for a bean, you can use ProxyFactoryBean. When creating a Hibernate session 
+	factory in the IoC container, you can use LocalSessionFactoryBean. -->

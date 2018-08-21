@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE beans PUBLIC
+	"-//SPRING//DTD BEAN 2.0//EN"
+	"http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+
+
+<beans>
+	<bean id="employee" class="com.model.Employee">
+		<property name="emp_id" value="1"></property>
+		<property name="emp_name" value="Ashwin"></property>
+		<property name="emp_salary" value="35000.540"></property>
+
+		<property name="address" ref="addr"></property>
+	</bean>
+
+	<bean id="addr" class="com.model.Address">
+		<property name="street" value="Nagar Road"></property>
+		<property name="area" value="Viman-nagar"></property>
+		<property name="city" value="Pune"></property>
+	</bean>
+</beans>
