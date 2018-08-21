@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE beans PUBLIC 
+	"-//SPRING//DTD BEAN 2.0//EN" 
+	"http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+
+<beans>
+	<bean id="student" class="com.model.Student">
+		<property name="id" value="1"></property>
+		<property name="name" value="Ashwin"></property>
+		<property name="mark" value="450"></property>
+
+		<property name="subjectList">
+			<list merge="true">
+				<ref bean="sub1" />
+				<ref bean="sub2" />
+				<ref bean="sub3" />
+			</list>
+		</property>
+
+		<property name="list">
+			<list>
+				<idref bean="sub1" />
+				<idref bean="sub2" />
+				<idref bean="sub3" />
+			</list>
+		</property>
+	</bean>
+
+	<bean id="sub1" class="com.model.Subject">
+		<property name="subCode" value="C301"></property>
+		<property name="subName" value="JAVA"></property>
+	</bean>
+
+	<bean id="sub2" class="com.model.Subject">
+		<property name="subCode" value="L478"></property>
+		<property name="subName" value="Python"></property>
+	</bean>
+
+	<bean id="sub3" class="com.model.Subject">
+		<property name="subCode" value="A405"></property>
+		<property name="subName" value="Angular"></property>
+	</bean>
+</beans>

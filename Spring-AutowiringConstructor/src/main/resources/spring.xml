@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE beans PUBLIC 
+	"-//SPRING//DTD BEAN 2.0//EN" 
+	"http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+
+<beans>
+	<bean id="student" class="com.model.Student"
+		autowire="constructor" >
+		<property name="id" value="1" />
+		<property name="name" value="Ashwin" />
+
+		<constructor-arg type="com.model.Subject" ref="sub" />
+	</bean>
+
+	<bean id="sub" class="com.model.Subject">
+		<property name="subName" value="JAVA" />
+		<property name="mark" value="80" />
+	</bean>
+</beans>
+
+<!-- autowire="autodetect" used constructor to autowire at the begining. 
+	If autowire by constructor is failed then it use autowire by type. -->
