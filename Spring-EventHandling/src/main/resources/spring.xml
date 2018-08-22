@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+
+	<bean id="start" class="com.model.StartEvent">
+	</bean>
+	<bean id="stop" class="com.model.StopEvent">
+	</bean>
+
+	<bean id="demo" class="com.model.DemoBean">
+		<property name="str" value="Demo Bean"></property>
+	</bean>
+</beans>
