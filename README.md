@@ -6,7 +6,7 @@ BeanFactory beanFactory = new XmlBeanFactory(new ClassPathResource("spring.xml")
 Alternative Solution for BeanFactory -: 
   DefaultListableBeanFactory beanFactory = new DefaultListableBeanFactory();
   XmlBeanDefinitionReader reader = new XmlBeanDefinitionReader(beanFactory);
-  reader.loadBeanDefinitions("spring.xml");
+  reader.loadBeanDefinitions("spring.xml"); 
   
   OR
   
