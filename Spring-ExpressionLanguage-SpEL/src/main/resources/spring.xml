@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+
+	<bean id="math" class="com.model.Maths">
+		<property name="add" value="#{2+3}" />
+		<property name="sub" value="#{9-5}" />
+		<property name="sqrt" value="#{ T (java.lang.Math).sqrt(15) }" />
+		<property name="pi" value="#{ T (java.lang.Math).PI }" />
+	</bean>
+
+	<bean id="str" class="com.model.StringOperation">
+		<property name="str" value="#{'Spring '+ 'Core'}" />
+	</bean>
+
+	<bean id="logic" class="com.model.Logical">
+		<property name="ans" value="#{120 > 90 and 5 le 8}" />
+		<!-- ge, gt, lt, le, ne, eq, and, or, not, >, <, >=, <=, !=, ==, !, &&, 
+			|| -->
+	</bean>
+
+	<bean id="conditional" class="com.model.Conditional">
+		<property name="ans"
+			value="#{ 'Java'.equals('Java') ? 'Accept' : 'Decline'}" />
+	</bean>
+
+	<bean id="regex" class="com.model.Regex">
+		<property name="flag" value="#{ '100' matches '\d+' }" />
+		<property name="validString"
+			value="#{ 'This is spring tutorial 10' matches '[a-z A-Z]+' }" />
+	</bean>
+
+	<bean id="objectAccess" class="com.model.ObjectAccess">
+		<property name="strValue" value="#{str.getStr()}" />
+		<property name="upper" value="#{str.getStr()?.toUpperCase()}" />
+		<property name="lower" value="#{str.getStr()?.toLowerCase()}" />
+
+		<!-- ? is null safe operator. If string is null then right side statement 
+			of ? operator won't be execute. -->
+	</bean>
+</beans>
